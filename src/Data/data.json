@@ -1,0 +1,22 @@
+{
+    
+      "comments": [
+        {
+            "id": 1, 
+            "name": "Narmadha",
+            "about":"Working in CTS"
+        },
+        {
+            "id": 2, 
+            "name": "Suganya",
+            "about":"Working in Wipro"
+        },
+        {
+            "id": 3, 
+            "name": "Tina",
+            "about":"Working in Zoho"
+        }
+      ]
+    
+  
+}
