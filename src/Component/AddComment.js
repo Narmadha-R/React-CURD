@@ -1,7 +1,11 @@
 import React from 'react';
+import style from '../CSS/CommentPage.css';
 import axios from 'axios';
+import  { Redirect } from 'react-router-dom';
+
 class AddComment extends React.Component{
- 
+    
+    
    render(){
         this.handleChange =(e) =>{
             this.setState({id: e.target.value});
@@ -9,21 +13,28 @@ class AddComment extends React.Component{
         }
         this.addUser = (event) =>{
             event.preventDefault();
-            let commentNode={};
-            commentNode.id=this.refs.id.value;
-            commentNode.name=this.refs.name.value;
-            commentNode.detail=this.refs.detail.value;
+        
+            var id=this.refs.id.value;
+            var name=this.refs.name.value;
+            var detail=this.refs.detail.value;
             document.getElementById("myform").reset();
             alert("data Submitted Successfully");
-            axios({
-                method: 'post',
-                url: 'http://localhost:3000/comments',
-                data: commentNode,
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    
-                },
+
+          
+            axios.post('http://localhost:3000/comments',
+        {
+            id:id,
+            name:name,
+            about:detail
+        })
+            .then(res=>{
+                console.log(res);
+               
             })
+            
+            
+               
+            
         }
     return(
         <div class="formData">
